@@ -1,6 +1,8 @@
 FROM websphere-liberty:webProfile7
 MAINTAINER IBM Java engineering at IBM Cloud
 
+RUN echo "nameserver 10.0.0.10" >> /etc/resolv.conf
+
 RUN mkdir -m 777 -p /config/resources
 
 # Upgrade to production license if URL to JAR provided
