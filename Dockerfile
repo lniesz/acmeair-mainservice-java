@@ -1,5 +1,7 @@
 FROM websphere-liberty:microProfile
 
+RUN echo "nameserver 10.0.0.10" >> /etc/resolv.conf
+
 # Install opentracing usr feature
 RUN wget -t 10 -x -nd -P /opt/ibm/wlp/usr https://github.com/WASdev/sample.opentracing.zipkintracer/releases/download/1.1.1/liberty-opentracing-zipkintracer-1.1.1-sample.zip && cd /opt/ibm/wlp/usr && unzip liberty-opentracing-zipkintracer-1.1.1-sample.zip && rm liberty-opentracing-zipkintracer-1.1.1-sample.zip
 
