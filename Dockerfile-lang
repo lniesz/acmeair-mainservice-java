@@ -1,6 +1,8 @@
 FROM websphere-liberty:webProfile7
 MAINTAINER IBM Java engineering at IBM Cloud
 
+RUN apt-get install dnsutils
+
 RUN mkdir -m 777 -p /config/resources
 
 # Upgrade to production license if URL to JAR provided
